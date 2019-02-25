@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!--
+    <form action="/webUI/lookmodelform/" method="post">
+        {%for item in obj%}
+            <li>{{item.hostname}}-{{item.ip}}-{{item.port}}<a href="/webUI/host_edit-{{item.id}}/">编辑</a></li>
+        {%endfor%}
+    <input type="submit" value="提交">
+    </form>
+    -->
+    {%for item in obj%}
+         <ul>{{item.hostname}}-{{item.ip}}-{{item.port}}<a href="/webUI/host_edit-{{item.nid}}/">编辑</a></ul>
+    {%endfor%}
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>主机列表(对象)</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>主机名</th>
+                    <th>IP</th>
+                    <th>端口</th>
+                    <th>业务线</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for line in v4 %}
+                    <tr hid="{{line.nid}}" bid="row.bus_id">
+                        <td>{{line.hostname}}</td>
+                        <td>{{line.ip}}</td>
+                        <td>{{line.port}}</td>
+                        <td>{{line.bus.caption}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    <h1>主机列表(字典)</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>主机名</th>
+                    <th>IP</th>
+                    <th>端口</th>
+                    <th>业务线</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for line in v5 %}
+                    <tr hid="{{line.nid}}" bid="row.bus_id">
+                        <td>{{line.hostname}}</td>
+                        <td>{{line.ip}}</td>
+                        <td>{{line.port}}</td>
+                        <td>{{line.bus__caption}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    <h1>主机列表(元祖)</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>主机名</th>
+                    <th>IP</th>
+                    <th>端口</th>
+                    <th>业务线</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for line in v6 %}
+                    <tr hid="{{line.nid}}" bid="row.bus_id">
+                        <td>{{line.1}}</td>
+                        <td>{{line.2}}</td>
+                        <td>{{line.3}}</td>
+                        <td>{{line.4}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</body>
+</html>

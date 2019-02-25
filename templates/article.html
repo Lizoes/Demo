@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .condition a{
+            display:inline-block;
+            padding:3dp 5dp;
+            border:1px solid #dddddd
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>组合搜索</h1>
+    <div class="condition">
+        <div>
+            <a href="article-0-{{arg_dict.category_id}}">全部</a>
+
+            {%for line in article_type_list%}
+                <a href="article-{{line.id}}-{{arg_dict.category_id}}">{{line.caption}}</a>
+            {%endfor%}
+        </div>
+        <div>
+            <a href="article-{{arg_dict.articleType_id}}-0">全部</a>
+            {%for line in category_list%}
+                <a href="article-{{arg_dict.articleType_id}}-{{line.id}}">{{line.caption}}</a>
+            {%endfor%}
+        </div>
+    </div>
+    <h1>查询结果</h1>
+    <ul>
+        {%for line in result%}
+            <li>{{line.id}}--{{line.title}}</li>
+        {%endfor%}
+    </ul>
+</body>
+</html>
